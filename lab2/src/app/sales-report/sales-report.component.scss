@@ -1,0 +1,11 @@
+:host{
+  display: block;
+}
+
+.data{
+  display: flex;
+  justify-content: space-between;
+  img{
+    max-width: 100px;
+  }
+}
