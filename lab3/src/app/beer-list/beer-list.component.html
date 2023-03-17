@@ -1,0 +1,6 @@
+<h1>Piwa:</h1>
+<ul>
+  <li *ngFor="let beer of list" (click)="onBeerSelect(beer)">{{beer.name}}</li>
+</ul>
+<app-beer-details [selectedBeer] = "selectedBeer"></app-beer-details>
+
