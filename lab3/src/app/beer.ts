@@ -1,8 +1,6 @@
 export class Beer {
-  name:string;
-  description:string;
-  constructor(name:string, description:string) {
-    this.name = name;
-    this.description = description;
-  }
+  name: string = '';
+  description: string = '';
+  image_url: string = '';
+  abv: number = 0;
 }

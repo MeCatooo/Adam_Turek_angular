@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Beer } from '../beer';
 
 @Component({
@@ -6,6 +6,6 @@ import { Beer } from '../beer';
   templateUrl: './beer-details.component.html',
   styleUrls: ['./beer-details.component.scss']
 })
-export class BeerDetailsComponent{
-@Input() selectedBeer: Beer = new Beer('', '');
+export class BeerDetailsComponent {
+  @Input() selectedBeer: Beer = new Beer();
 }
