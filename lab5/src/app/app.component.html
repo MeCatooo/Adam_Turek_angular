@@ -1,0 +1,38 @@
+<div [formGroup]="form">
+  <h3>Dane kupującego</h3>
+  <div v>
+    <label for="imie">Imie</label>
+    <input type="text" formControlName="imie">
+    <label for="nazwisko">Nazwisko</label>
+    <input type="text" formControlName="nazwisko">
+    <label for="email">Email</label>
+    <input type="text" formControlName="email">
+  </div>
+  <h3>Dane do wysyłki</h3>
+  <div formGroupName="adres">
+    <label for="ulica">Ulica</label>
+    <input type="text" formControlName="ulica">
+    <label for="numer">Numer</label>
+    <input type="text" formControlName="numer">
+    <label for="kod">Kod pocztowy</label>
+    <input type="text" formControlName="kod">
+    <label for="miasto">Miasto</label>
+    <input type="text" formControlName="miasto">
+  </div>
+  <h3>Koszyk</h3>
+  <div formArrayName="koszyk">
+    <div *ngFor="let pozycja of koszyk.controls; let i=index">
+      <div formGroupName="{{i}}">
+        <label for="nazwa">Nazwa</label>
+      <input type="text" formControlName="nazwa">
+      <label for="ilosc">Ilość</label>
+      <input type="text" formControlName="ilosc">
+      <label for="cena">Cena</label>
+      <input type="text" formControlName="cena">
+      </div>
+    </div>
+
+  </div>
+  <button class="button" (click)="addProduct()">Nowy produkt</button>
+</div>
+<button (click)="submit()">Zamów</button>

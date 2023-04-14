@@ -5,7 +5,7 @@ import { CSS } from './model/css.model';
   providedIn: 'root'
 })
 export class CssCommunicationService {
-  private css: CSS = {
+  private static css: CSS = {
     color: undefined,
     border: undefined,
     'box-shadow': undefined,
@@ -14,10 +14,10 @@ export class CssCommunicationService {
   constructor() { }
 
   public getCss(): CSS {
-    return this.css;
+    return CssCommunicationService.css;
   }
 
   public setCss(css: CSS): void {
-    this.css = css;
+    CssCommunicationService.css = css;
   }
 }
