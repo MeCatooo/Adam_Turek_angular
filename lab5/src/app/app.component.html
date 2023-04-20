@@ -24,15 +24,29 @@
     <div *ngFor="let pozycja of koszyk.controls; let i=index">
       <div formGroupName="{{i}}">
         <label for="nazwa">Nazwa</label>
-      <input type="text" formControlName="nazwa">
-      <label for="ilosc">Ilość</label>
-      <input type="text" formControlName="ilosc">
-      <label for="cena">Cena</label>
-      <input type="text" formControlName="cena">
+        <input type="text" formControlName="nazwa">
+        <label for="ilosc">Ilość</label>
+        <input type="text" formControlName="ilosc">
+        <label for="cena">Cena</label>
+        <input type="text" formControlName="cena">
       </div>
     </div>
-
   </div>
   <button class="button" (click)="addProduct()">Nowy produkt</button>
-</div>
-<button (click)="submit()">Zamów</button>
+  <div>
+    <h3>Podsumowanie</h3>
+    <div>Imie: {{form.get('imie')?.value}}</div>
+    <div>Nazwisko: {{form.get('nazwisko')?.value}}</div>
+    <div>Email: {{form.get('email')?.value}}</div>
+    <div>Ulica: {{form.get('adres')?.get('ulica')?.value}}</div>
+    <div>Numer: {{form.get('adres')?.get('numer')?.value}}</div>
+    <div>Kod pocztowy: {{form.get('adres')?.get('kod')?.value}}</div>
+    <div>Miasto: {{form.get('adres')?.get('miasto')?.value}}</div>
+    <div *ngFor="let pozycja of koszyk.controls; let i=index">
+      <div>Nazwa: {{form.get('koszyk')?.get(i.toString())?.get('nazwa')?.value}}</div>
+      <div>Ilość: {{form.get('koszyk')?.get(i.toString())?.get('ilosc')?.value}}</div>
+      <div>Cena: {{form.get('koszyk')?.get(i.toString())?.get('cena')?.value}}</div>
+    </div>
+    <div>Suma: {{sum}}</div>
+  </div>
+  <button (click)="submit()">Zamów</button>
