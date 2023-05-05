@@ -31,7 +31,6 @@ export class AppComponent implements OnInit {
         })
       ])
     });
-    //calculate sum on Cena change
     this.form.get('koszyk')?.valueChanges.subscribe(() => {
       this.calculateSum();
     });
