@@ -1,0 +1,5 @@
+<div>
+  <span *ngFor="let miejse of rezerwacje|async" [ngStyle]="{ 'background-color': miejse == 0 ? 'green' : miejse == 1 ? 'yellow' : miejse == 2 ? 'red' : 'white' }">
+       {{Miejsce[miejse]}}
+  </span>
+</div>
